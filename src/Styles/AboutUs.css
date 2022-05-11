@@ -1,0 +1,10 @@
+.accordion-body {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.AboutUs{
+  
+  background-color: #F2F7DF;
+  height:100vh;
+
+}
