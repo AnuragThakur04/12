@@ -1,9 +1,13 @@
+.service {
+  background: #e6e5e6;
+  padding-bottom: 2rem;
+}
 .story_upper {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 20px 0;
-  background:#e6e5e6;
+  background: #e6e5e6;
 }
 .story_heading > h1 {
   font-size: 21px;
@@ -43,8 +47,8 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin: 20px 0px 20px 0px;
-  background:#e6e5e6;
+  margin: 20px 0px 0px 0px;
+  background: #e6e5e6;
 }
 .serviceCard {
   display: flex;
@@ -55,9 +59,9 @@
   margin-top: 3rem;
 }
 .card {
-  box-shadow: 1px 1px 13px 5px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 1px 1px 13px 5px rgba(0,0,0,0.75);
-  -moz-box-shadow: 1px 1px 13px 5px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 13px 5px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 1px 13px 5px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 13px 5px rgba(0, 0, 0, 0.75);
   padding: 10px;
 }
 .card > h5 {
@@ -76,9 +80,11 @@
   margin-right: 20px;
   align-self: center;
   margin: 10px 0 10px 0;
+  text-transform: uppercase;
 }
 .card > button:hover {
   background-color: #75bf47;
   color: white;
-  border: none;
+  /* border: none; */
+  text-transform: uppercase;
 }

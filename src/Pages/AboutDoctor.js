@@ -1,9 +1,9 @@
 import React from "react";
 import Header from "../Component/Header";
-import "../Styles/AboutUs.css";
+import "../Styles/AboutDoctor.css";
 const AboutDoctor = () => {
   return (
-    <div>
+    <div class="aboutDoctor">
       <Header />
       <div class="container accordion" id="accordionExample">
         <div class="accordion-item">
@@ -27,16 +27,21 @@ const AboutDoctor = () => {
           >
             <div class="accordion-body">
               <img src={require("../Assets/image_1.jpg")} />
-           <div style={{display:'flex',flexDirection:'column',flex:'1'}}>
-           <p> Dr Yip has clinical experience in acupuncture and Chinese Medicine in both Hong Kong and Melbourne. </p>
-              <p>AHPRA qualified -  </p>
-              <ul>
-                <li>Registered Chinese Medicine Practitioner </li>
-                <li>Registered Acupuncturist </li>
-                <li>Registered Chinese Medicine Dispenser</li>
-              </ul>
-           </div>
-                
+              <div
+                style={{ display: "flex", flexDirection: "column", flex: "1" }}
+              >
+                <p>
+                  {" "}
+                  Dr Yip has clinical experience in acupuncture and Chinese
+                  Medicine in both Hong Kong and Melbourne.{" "}
+                </p>
+                <p>AHPRA qualified - </p>
+                <ul>
+                  <li>Registered Chinese Medicine Practitioner </li>
+                  <li>Registered Acupuncturist </li>
+                  <li>Registered Chinese Medicine Dispenser</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
