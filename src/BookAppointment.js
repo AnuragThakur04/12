@@ -1,4 +1,3 @@
-
 import emailjs from "emailjs-com";
 import React, { useState } from "react";
 import "./BookAppointment.css";
@@ -6,41 +5,48 @@ import { db } from "./firebase";
 import firebase from "firebase";
 import Header from "./Component/Header";
 
+const dataClass = {
+  firstname: "",
+  lastname: "",
+  address: "",
+  phone: "",
+  email: "",
+};
 function BookAppointment() {
-
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [address, setAddress] = useState('')
-  const [phone, setPhone] = useState()
-
-
+  const [data, setData] = useState(dataClass);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [address, setAddress] = useState("");
+  const [phone, setPhone] = useState();
 
   const sendAppointment = (e) => {
     e.preventDefault();
-    console.log('yes');
-    emailjs.sendForm(
-      "service_jx4br1k",
-      "template_e537bi4",
-      e.target,
-      "ViQ0OXaS8aiGcBtLl"
-    ).then((res)=>{
-      db.collection('Bookings').add({
-        name:name,
-        email:email,
-        address:address,
-        timestamp:firebase.firestore.FieldValue.serverTimestamp(),
-        phone:phone
+    console.log("yes");
+    emailjs
+      .sendForm(
+        "service_jx4br1k",
+        "template_e537bi4",
+        e.target,
+        "ViQ0OXaS8aiGcBtLl"
+      )
+      .then((res) => {
+        db.collection("Bookings").add({
+          name: name,
+          email: email,
+          address: address,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+          phone: phone,
+        });
       })
-    }).catch((e)=>{
-      console.log(e);
-    })
+      .catch((e) => {
+        console.log(e);
+      });
   };
 
   return (
     <div>
-    <Header/>
+      <Header />
       <div className="bookAppointment">
-
         <div className="bookLeft">
           <h1>Book You New Slot and Save Your Time</h1>
           <p>
@@ -52,19 +58,47 @@ function BookAppointment() {
         <form className="bookRight" onSubmit={sendAppointment}>
           <h1>Book Appointment</h1>
           <div className="rightContent">
-            <div>
-              <input type="text" name="name" placeholder="Enter Full Name" onChange={(e) => { setName(e.target.value) }} />
-            </div>
-            <div>
+            <div class="nameBlock">
               <input
-                onChange={(e) => { setPhone(e.target.value) }}
-                type="number"
-                name="phone"
-                placeholder="Entter Mobile Number"
+                type="text"
+                name="firstname"
+                placeholder="First Name"
+                required
+                onChange={(e) => {
+                  setData({ ...data, firstname: e.target.value });
+                }}
+              />
+              <input
+                type="text"
+                name="lastname"
+                required
+                placeholder="Last Name"
+                onChange={(e) => {
+                  setData({ ...data, lastname: e.target.value });
+                }}
               />
             </div>
             <div>
-              <input onChange={(e) => { setEmail(e.target.value) }} type="email" name="user_email" placeholder="Entter Your Email " />
+              <input
+                onChange={(e) => {
+                  setData({ ...data, phone: e.target.value });
+                }}
+                type="number"
+                required
+                name="phone"
+                placeholder="Contact Number"
+              />
+            </div>
+            <div>
+              <input
+                onChange={(e) => {
+                  setData({ ...data, email: e.target.value });
+                }}
+                type="email"
+                required
+                name="user_email"
+                placeholder="Email "
+              />
             </div>
             <div>
               <input type="datetime-local" placeholder="Entter Full Name" />
@@ -73,15 +107,21 @@ function BookAppointment() {
             <div className="address">
               <p>Address Detail</p>
               <div style={{ display: "flex" }}>
-                <input onChange={(e) => { setAddress(e.target.value) }} type="text" placeholder="Entter Address" />
+                <input
+                  onChange={(e) => {
+                    setData({ ...data, address: e.target.value });
+                  }}
+                  type="text"
+                  placeholder="Entter Address"
+                />
                 <input
                   style={{ marginLeft: "10px" }}
                   type="text"
-                  placeholder="Entter City"
+                  placeholder="Enter City"
                 />
               </div>
               <div style={{ display: "flex" }}>
-                <input type="text" placeholder="Entter Area" />
+                <input type="text" placeholder="Enter Area" />
                 <input
                   style={{ marginLeft: "10px" }}
                   type="text"
@@ -89,7 +129,7 @@ function BookAppointment() {
                 />
               </div>
             </div>
-            <button >book appointmnet</button>
+            <button>book an appointment</button>
           </div>
         </form>
       </div>

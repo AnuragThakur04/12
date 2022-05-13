@@ -31,19 +31,17 @@ const thumb = [
   },
 ];
 
-
 function Frame() {
-
   // console.log(window.location)
   //   const handleClick=()=>{
   //     // window.location.replace('/about')
   //   }
 
   return (
-    <div className="frame" style={{paddingTop:"20px"}}>
+    <div className="frame" style={{ paddingTop: "20px" }}>
       <div className="aboutUs" id="about">
         <div className="heading wow fadeInLeft">
-          <h1> Something <span style={{fontWeight:'500'}}>About</span> Us </h1>
+          <h1>TIMINGS </h1>
         </div>
         <div className="frame_about wow fadeInRight">
           <ul>
@@ -54,9 +52,9 @@ function Frame() {
               And 10:00 am to 4:00 pm on Saturdays, while Sundays are OFF.{" "}
             </li>
           </ul>
-          <p className='frame_viewMore'>
-            <h4>{'View More > '}</h4>
-          </p>
+          {/* <p className="frame_viewMore">
+            <h4>{"View More > "}</h4>
+          </p> */}
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@ function Header() {
   const navigation = useNavigate();
   const location = useLocation();
   const pathName = location.pathname;
-  
+
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -80,7 +80,9 @@ function Header() {
             >
               Location
             </p>
-            <button onClick={() => navigation("book")}>Book appointment</button>
+            <button onClick={() => navigation("/book")}>
+              Book an appointment
+            </button>
           </div>
         </div>
       </div>
