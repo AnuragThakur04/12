@@ -19,6 +19,7 @@
 .navbar-nav > p:hover {
   transform: scale(1.1);
 }
+
 .header-right {
   display: flex;
   flex: 0.5 !important;

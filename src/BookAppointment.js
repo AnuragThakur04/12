@@ -101,7 +101,7 @@ function BookAppointment() {
               />
             </div>
             <div>
-              <input type="datetime-local" placeholder="Entter Full Name" />
+              <input type="datetime-local" placeholder="Select Date" />
             </div>
 
             <div className="address">

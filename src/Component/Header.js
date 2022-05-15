@@ -1,7 +1,9 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./Header.css";
-
+import Button from "@mui/material/Button";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import HomeIcon from "@mui/icons-material/Home";
 function Header() {
   const navigation = useNavigate();
   const location = useLocation();
@@ -36,6 +38,7 @@ function Header() {
                 cursor: "pointer",
               }}
             >
+              <HomeIcon />
               Home
             </p>
             <p
@@ -83,6 +86,14 @@ function Header() {
             <button onClick={() => navigation("/book")}>
               Book an appointment
             </button>
+
+            <p>
+              <AccountCircleIcon
+                style={{ marginLeft: "20px", width: "50px", height: "50px" }}
+                onClick={() => navigation("/login")}
+              />
+              Login
+            </p>
           </div>
         </div>
       </div>
