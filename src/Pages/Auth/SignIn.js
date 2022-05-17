@@ -47,6 +47,7 @@ export default function SignIn() {
       .then((res) => {
         console.log(res, "response");
         navigation("/");
+        localStorage.setItem('@user',res.user)
       })
       .catch((e) => {
         setError(e.message);

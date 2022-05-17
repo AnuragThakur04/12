@@ -8,6 +8,9 @@ function Header() {
   const navigation = useNavigate();
   const location = useLocation();
   const pathName = location.pathname;
+  const user=localStorage.getItem('@user');
+
+  console.log(user)
 
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -90,9 +93,9 @@ function Header() {
             <p>
               <AccountCircleIcon
                 style={{ marginLeft: "20px", width: "50px", height: "50px" }}
-                onClick={() => navigation("/login")}
+                onClick={() => user?navigation("/admin"):navigation('/login')}
               />
-              Login
+              {user? 'Profile':'Login'}
             </p>
           </div>
         </div>

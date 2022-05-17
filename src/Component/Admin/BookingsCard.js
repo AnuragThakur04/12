@@ -20,7 +20,7 @@ const BookingsCard = ({ data }) => {
       });
   };
   return (
-    <Box flex="1" shadow="6" pt="20" mt="6" rounded={"md"} pb="20" bg="#e5e5e5">
+    <Box flex="1" shadow="6" pt="20" mt="6" rounded={"md"} pb="20" bg="#e5e5e5" width={"80vw"}>
       <HStack space={2} justifyContent="space-between" flex="1">
         <Box
           flex="0.5"
@@ -28,10 +28,10 @@ const BookingsCard = ({ data }) => {
           alignItems="center"
           pointerEvents="cursor"
         >
-          <AccountCircleIcon style={{ width: "40%", height: "40%" }} />
+          <AccountCircleIcon style={{ width: "30%", height: "30%" }} />
           <Text>{data?.name}</Text>
         </Box>
-        <Box flex="0.5">
+        <Box flex="0.5" alignItems={'center'}  justifyContent={'center'}>
           <Text fontSize={"md"}>Address: {data?.address}</Text>
           <Text fontSize={"md"}>Phone: {data?.phone}</Text>
           <Text fontSize={"md"}>Booking On :{date}</Text>

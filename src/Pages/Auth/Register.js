@@ -52,6 +52,7 @@ export default function Register() {
         console.log(res, "response");
         if (res) {
           navigation("/");
+          localStorage.setItem('@user',res.user)
         }
       })
       .catch((e) => {
